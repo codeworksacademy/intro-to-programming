@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Balloon Pop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form onsubmit="setPlayer(event)">
+    <div>
+      <label for="name">Player Name:</label>
+      <input type="text" name="playerName" required>
+    </div>
+    <button type="submit">Ok</button>
+  </form>
+
+  <div>
+    <button id="start-button" onclick="startGame()">START GAME</button>
+  </div>
+
+  <button id="inflate-button" onclick="inflate()" disabled="true">
+    Inflate
+    <span id="click-count"></span>
+  </button>
+
+
+  <div>
+    <span>Ballons Popped:</span>
+    <span id="pop-count">0</span>
+  </div>
+  <div>
+    <span>Top Popped:</span>
+    <span id="high-pop-count">0</span>
+  </div>
+  <div>
+    <span>Time Remaining:</span>
+    <span id="countdown">0</span>
+  </div>
+
+  <div id="balloon" class="balloon"></div>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
