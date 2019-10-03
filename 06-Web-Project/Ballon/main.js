@@ -109,7 +109,14 @@ function setPlayer(event) {
   }
   
   form.reset()
+  document.getElementById("game").classList.remove("hidden")
+  form.classList.add("hidden")
   draw()
+}
+
+function changePlayer(){
+  document.getElementById("player-form").classList.remove("hidden")
+  document.getElementById("game").classList.add("hidden")
 }
 
 function savePlayers() {
