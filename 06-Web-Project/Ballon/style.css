@@ -6,6 +6,8 @@
   --shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
   --corners: 4px;
   --text-color: #3a3838;
+  --dark: #3a3838;
+  --dark-lighten: #504c4c;
   --light: #fdfdfd;
 }
 
@@ -45,11 +47,13 @@ button{
   text-transform: uppercase;
   transition: all .2s ease;
   cursor: pointer;
+  padding: 1em;
 }
 
 button:hover{
   background-color: var(--primary-darken);
 }
+
 
 .balloon{
   height: 120px;
@@ -75,13 +79,54 @@ button:hover{
   filter: drop-shadow(var(--shadow));
 }
 
+.bg-dark{
+  background-color: var(--dark);
+}
+.text-light{
+  color: var(--light)
+}
+
+.btn-dark{
+  background-color: var(--dark-lighten);
+  border-color: var(--dark);
+}
+.btn-dark:hover{
+  background-color: var(--dark);
+  border-color: var(--dark-lighten);
+}
+
 
 .d-flex{
   display: flex;
+  align-items: center;
 }
 .d-flex.space-between{
   justify-content: space-between;
 }
+.d-flex.space-around{
+  justify-content: space-around;
+}
+
+.mt-1{
+  margin-top: .5em;
+}
+.mt-2{
+  margin-top: 1em;
+}
+.mt-3{
+  margin-top: 1.5em;
+}
+
+.mb-1{
+  margin-bottom: .5em;
+}
+.mb-2{
+  margin-bottom: 1em;
+}
+.mb-3{
+  margin-bottom: 1.5em;
+}
+
 
 .hidden{
   display: none !important;
