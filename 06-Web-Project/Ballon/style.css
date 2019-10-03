@@ -1,14 +1,77 @@
-body{
-  background-color: wheat;
+:root{
+  --primary: #f393fd;
+  --primary-darken: #af2cbc;
+  --bg: #e0d9d9;
+  --shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  --corners: 4px;
+  --text-color: #3a3838;
+  --light: #fdfdfd;
 }
+
+body{
+  background-color: var(--bg);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 16pt;
+  color: var(--text-color);
+}
+
+header{
+  margin: 3em 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+button{
+  background-color: var(--primary);
+  color: var(--light);
+  border: 1px solid var(--primary-darken);
+  border-radius: var(--corners);
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: var(--primary-darken);
+}
+
 
 .balloon{
   height: 120px;
   width: 100px;
   background-color: blue;
   border-radius: 50%;
+  transition: all .2s ease;
+}
+
+
+.container{
+  width: 50%;
+  margin: auto;
+}
+
+.card{
+  background-color: var(--light);
+  padding: 1em;
+  box-shadow: var(--shadow);
+  border-radius: var(--corners);
+}
+
+.shadow{
+  filter: drop-shadow(var(--shadow));
+}
+
+
+.d-flex{
+  display: flex;
+}
+.d-flex.space-between{
+  justify-content: space-between;
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
