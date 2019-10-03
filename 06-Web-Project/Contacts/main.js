@@ -11,11 +11,12 @@ let contacts = []
 function addContact(event) {
   event.preventDefault()
   let form = event.target
+
   let contact = {
     id: generateId(),
     name: form.name.value,
     phone: form.phone.value,
-    ice: form.ice.value
+    ice: form.ice.checked
   }
   contacts.push(contact)
   saveContacts()
@@ -53,6 +54,7 @@ function drawContacts() {
     <div class="contact-card ${contact.ice ? 'ice' : ''}">
       <h3>${contact.name}</h3>
       <p>${contact.phone}</p>
+      <button type="button" onclick="removeContact('${contact.id}')">remove</button>
     </div>
     `
   })
@@ -65,6 +67,7 @@ function drawContacts() {
  */
 function saveContacts() {
   window.localStorage.setItem("contacts", JSON.stringify(contacts))
+  drawContacts()
 }
 
 /**
@@ -87,3 +90,7 @@ function loadContacts() {
 function generateId() {
   return Math.floor(Math.random() * 10000000) + "-" + Math.floor(Math.random() * 10000000)
 }
+
+
+loadContacts()
+drawContacts()
