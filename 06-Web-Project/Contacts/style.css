@@ -18,6 +18,10 @@ body{
   /* TODO Add font-family from google */
 }
 
+p{
+  margin: .5em 0;
+}
+
 img{
   max-width: 100%;
 }
@@ -60,6 +64,11 @@ button{
 
 button:hover{
   background-color: var(--primary-darken);
+}
+
+.contacts{
+  overflow-y: scroll;
+  max-height: 50vh; 
 }
 
 .container{
@@ -155,4 +164,8 @@ button:hover{
 
 .hidden{
   display: none !important;
+}
+
+.contacts::-webkit-scrollbar {
+  width: 0;
 }
