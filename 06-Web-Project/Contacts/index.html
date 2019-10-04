@@ -6,10 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Contacts</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>My Contact List</h1>
+
+  <header class="container card">
+    <h1>
+      <i class="fa fa-fw fa-address-book"></i>
+      <span>My Contact List</span>
+    </h1>
+    <!-- TODO show the new-contact-form when this button is clicked -->
+    <button class="fab" onclick="" title="New Contact">
+      <i class="fa fa-lg fa-plus-circle"></i>
+    </button>
+    </div>
+    <hr>
+  </header>
+
+  <main class="container">
+    <!-- TODO Complete the form to include a contact name, phone, and ice checkbox -->
+    <form class="card mt-1 mb-1" id="new-contact-form" class="" onsubmit="">
+      <div>
+        <h4 class="mt-1 mb-1">
+          <i class="fa fa-fw fa-user"></i>
+          <span>Add Contact</span>
+        </h4>
+      </div>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+      </div>
+      <!-- TODO hide this form when this button is clicked -->
+      <hr>
+      <div class="d-flex space-between">
+        <button type="submit" onclick="">Submit</button>
+        <button type="button" onclick="">cancel</button>
+      </div>
+    </form>
+
+    <div id="contact-list">
+      <div class="card mt-1 mb-1">
+        <h3>Jimmy Tester</h3>
+        <p>
+          <i class="fa fa-fw fa-phone"></i>
+          <span>(777) 777-7777</span>
+        </p>
+      </div>
+      <div class="card mt-1 mb-1 ice">
+        <h3>ICE Tester</h3>
+        <p>
+          <i class="fa fa-fw fa-phone"></i>
+          <span>(777) 777-7777</span>
+        </p>
+      </div>
+    </div>
+  </main>
 
   <script src="main.js"></script>
 </body>
