@@ -55,6 +55,46 @@ button:hover{
 }
 
 
+.pump{
+  margin-top: 100px;
+  height: 130px;
+  position: relative;
+}
+
+.handle{
+  background-color: var(--dark-lighten);
+  width: 80px;
+  height: 10px;
+  position: absolute;
+  top: -80px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  transition: all .05s linear;
+}
+
+.pump:active .handle{
+  top: -20px;
+}
+
+.handle::before{
+  content: " ";
+  display: block;
+  background-color: var(--dark-lighten);
+  width: 10px;
+  height: 80px;
+}
+
+.pump-box{
+  background-color: var(--primary-lighten);
+  height: 130px;
+  width: 180px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 2;
+  position: absolute;
+}
+
 .balloon{
   height: 120px;
   width: 100px;
@@ -67,6 +107,12 @@ button:hover{
   width: 50%;
   margin: auto;
 }
+
+/* @media screen and (max-width: 700px){
+  .container{
+    width: 100%;
+  }
+} */
 
 .card{
   background-color: var(--light);

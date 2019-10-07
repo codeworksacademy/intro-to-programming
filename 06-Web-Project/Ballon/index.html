@@ -20,7 +20,7 @@
   </header>
 
   <main class="container card">
-    <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
+    <form class="d-flex space-between hidden" id="player-form" onsubmit="setPlayer(event)">
       <div>
         <label for="name">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -48,13 +48,13 @@
         </div>
       </div>
 
-      <div class="d-flex space-around mt-2">
+      <div id="main-controls" class="d-flex space-around mt-2 hidden">
         <button class="btn-dark" onclick="changePlayer()">Change Player</button>
         <button id="start-button" onclick="startGame()">START GAME</button>
       </div>
-
-      <div class="hidden">
-        <button id="inflate-button" onclick="inflate()" disabled="true">
+      <!-- TODO replace hidden class -->
+      <div id="game-controls" class="">
+        <button id="inflate-button" onclick="inflate()">
           Inflate
           <span id="click-count"></span>
         </button>
@@ -70,7 +70,13 @@
           <span id="countdown">0</span>
         </div>
 
-        <div id="balloon" class="balloon"></div>
+        <div class="d-flex space-between">
+          <div class="pump">
+            <div class="handle"></div>
+            <div class="pump-box"></div>
+          </div>
+          <div id="balloon" class="balloon"></div>
+        </div>
       </div>
     </section>
   </main>
