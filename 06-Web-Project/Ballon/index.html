@@ -14,13 +14,13 @@
 <body>
 
   <header>
-    <div class="container shadow">
+    <div class="container shadow text-center">
       <img src="balloon-pop-logo.png" alt="balloon pop logo">
     </div>
   </header>
 
   <main class="container card">
-    <form class="d-flex space-between hidden" id="player-form" onsubmit="setPlayer(event)">
+    <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
       <div>
         <label for="name">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -31,9 +31,7 @@
       <button type="submit">Ok</button>
     </form>
 
-    <!-- TODO replace hidden class -->
-
-    <section id="game" class="game ">
+    <section id="game" class="game hidden">
 
       <div class="card bg-dark text-light">
         <div class="d-flex space-between">
@@ -48,17 +46,12 @@
         </div>
       </div>
 
-      <div id="main-controls" class="d-flex space-around mt-2 hidden">
+      <div id="main-controls" class="d-flex space-around mt-2 ">
         <button class="btn-dark" onclick="changePlayer()">Change Player</button>
         <button id="start-button" onclick="startGame()">START GAME</button>
       </div>
-      <!-- TODO replace hidden class -->
-      <div id="game-controls" class="">
-        <button id="inflate-button" onclick="inflate()">
-          Inflate
-          <span id="click-count"></span>
-        </button>
 
+      <div id="game-controls" class="hidden">
 
         <div>
           <span>Ballons Popped:</span>
@@ -70,16 +63,28 @@
           <span id="countdown">0</span>
         </div>
 
-        <div class="d-flex space-between">
-          <div class="pump">
+        <div class="game-container d-flex">
+          <div class="pump" onclick="inflate()">
             <div class="handle"></div>
-            <div class="pump-box"></div>
+            <div class="pump-box">
+              <span id="click-count"></span>
+            </div>
           </div>
           <div id="balloon" class="balloon"></div>
+          <audio id="pop-sound" src="burst.mp3"></audio>
         </div>
+
+
       </div>
     </section>
   </main>
+
+  
+    <div id="scoreboard" class="container card mt-2">
+      <h3 class="text-center">Scoreboard</h3>
+      <div id="players"></div>
+    </div>
+
 
 
   <script src="main.js"></script>

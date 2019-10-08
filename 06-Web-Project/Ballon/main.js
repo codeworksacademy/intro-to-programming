@@ -2,20 +2,23 @@
 
 // DATA 
 let clickCount = 0
-let height = 120
+let height = 140
 let width = 100
 let inflationRate = 20
 let maxsize = 300
 let highestPopCount = 0
 let currentPopCount = 0
-let gameLength = 5000
+let gameLength = 10000
 let clockId = 0
 let timeRemaining = 0
 let currentPlayer = {}
+let currentColor = "red"
+let possibleColors = ["red", "green", "blue", "purple", "pink"]
 
 function startGame() {
   document.getElementById("game-controls").classList.remove("hidden")
   document.getElementById("main-controls").classList.add("hidden")
+  document.getElementById("scoreboard").classList.add("hidden")
   startClock()
   setTimeout(stopGame, gameLength)
 }
@@ -40,14 +43,30 @@ function inflate() {
   clickCount++
   height += inflationRate
   width += inflationRate
+  checkBalloonPop()
+  draw()
+}
 
+function checkBalloonPop(){
   if (height >= maxsize) {
     console.log("pop the balloon")
+    let balloonElement = document.getElementById("balloon")
+    balloonElement.classList.remove(currentColor)
+    getRandomColor()
+    balloonElement.classList.add(currentColor)
+
+    // @ts-ignore
+    document.getElementById("pop-sound").play()
+
     currentPopCount++
-    height = 0
+    height = 40
     width = 0
   }
-  draw()
+}
+
+function getRandomColor(){
+  let i = Math.floor(Math.random() * possibleColors.length);
+  currentColor = possibleColors[i]
 }
 
 function draw() {
@@ -71,6 +90,7 @@ function stopGame() {
   console.log("the game is over")
 
   document.getElementById("main-controls").classList.remove("hidden")
+  document.getElementById("scoreboard").classList.remove("hidden")
   document.getElementById("game-controls").classList.add("hidden")
 
   clickCount = 0
@@ -86,6 +106,7 @@ function stopGame() {
 
   stopClock()
   draw()
+  drawScoreboard()
 }
 
 // #endregion
@@ -106,14 +127,15 @@ function setPlayer(event) {
     players.push(currentPlayer)
     savePlayers()
   }
-  
+
   form.reset()
   document.getElementById("game").classList.remove("hidden")
   form.classList.add("hidden")
   draw()
+  drawScoreboard()
 }
 
-function changePlayer(){
+function changePlayer() {
   document.getElementById("player-form").classList.remove("hidden")
   document.getElementById("game").classList.add("hidden")
 }
@@ -127,3 +149,25 @@ function loadPlayers() {
     players = playersData
   }
 }
+
+function drawScoreboard(){
+  let template = ""
+
+  players.sort((p1, p2) => p2.topScore - p1.topScore)
+
+  players.forEach(player => {
+    template += `
+    <div class="d-flex space-between">
+        <span>
+          <i class="fa fa-user"></i>
+          ${player.name}
+        </span>
+        <span>score: ${player.topScore}</span>
+    </div>
+    `
+  })
+
+  document.getElementById("players").innerHTML = template
+}
+
+drawScoreboard()
