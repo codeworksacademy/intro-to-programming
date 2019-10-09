@@ -3,7 +3,7 @@
   --primary-lighten: #2392fa;
   --primary-darken: #004d96;
   --bg: #e0d9d9;
-  --shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  --shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   --corners: 0;
   --text-color: #3a3838;
   --dark: #3a3838;
@@ -63,7 +63,7 @@ button{
 }
 
 button:hover{
-  background-color: var(--primary-darken);
+  background-color: var(--primary-lighten);
 }
 
 .contacts{
@@ -100,6 +100,15 @@ button:hover{
 .btn-dark:hover{
   background-color: var(--dark);
   border-color: var(--dark-lighten);
+}
+
+.btn-cancel{
+  background-color: red;
+  border-color: lightcoral;
+}
+.btn-cancel:hover{
+  background-color: #fa4141;
+  border-color: #ff3737;
 }
 
 .d-flex{
