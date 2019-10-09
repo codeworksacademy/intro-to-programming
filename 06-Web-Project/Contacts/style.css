@@ -9,6 +9,7 @@
   --dark: #3a3838;
   --dark-lighten: #504c4c;
   --light: #fdfdfd;
+  --danger: #ff3737;
 }
 
 body{
@@ -111,6 +112,10 @@ button:hover{
   border-color: #ff3737;
 }
 
+.text-danger{
+  color: var(--danger);
+}
+
 .d-flex{
   display: flex;
   align-items: center;
@@ -140,6 +145,15 @@ button:hover{
 }
 .mb-3{
   margin-bottom: 1.5em;
+}
+
+.action{
+  cursor: pointer;
+  transition: all .3s linear;
+  filter: brightness(.8);
+}
+.action:hover{
+  filter: brightness(1);
 }
 
 .fab{
