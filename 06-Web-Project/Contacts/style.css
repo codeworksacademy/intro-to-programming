@@ -172,14 +172,14 @@ button:hover{
   background-color: var(--primary-lighten);
 }
 
-.ice{
+.emergency-contact{
   background: var(--dark);
   color: var(--light);
   position: relative;
 }
-.ice h3:before{
-  content: "❄ ICE";
-  color: var(--primary-lighten);
+.emergency-contact h3:before{
+  content: "🚑 Emergency Contact";
+  color: var(--light);
   position: absolute;
   right: 1em;
   font-size: 14pt;

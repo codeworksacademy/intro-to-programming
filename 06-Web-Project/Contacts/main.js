@@ -2,33 +2,14 @@ let contacts = []
 
 /**
  * Called when submitting the new Contact Form
- * This method will pull data from the form and
- * add that data to the contacts list.
- * Then it resets the form
+ * This method will pull data from the form
+ * use the provided function to give the data an id
+ * then add that data to the contacts list.
+ * Then reset the form
  * *** hints:
  * *** push: resources/push.jpg
  */
 function addContact(event) {
-}
-
-/**
- * This function is called with a contact id
- * and will use the id to find and remove the 
- * contact by their id from the list of contacts
- * *** hints: 
- * *** findIndex: resources/findIndex.jpg
- * *** splice: resources/splice.jpg
- * @param {string} contactId 
- */
-function removeContact(contactId) {
-}
-
-/**
- * This function targets the contacts-list on the 
- * DOM and adds a new div element for each of the
- * contacts in the contacts array
- */
-function drawContacts() {
 }
 
 /**
@@ -45,6 +26,27 @@ function saveContacts() {
  */
 function loadContacts() {
 }
+
+/**
+ * This function targets the contacts-list on the 
+ * DOM and adds a new div element for each of the
+ * contacts in the contacts array
+ */
+function drawContacts() {
+}
+
+/**
+ * This function is called with a contact id
+ * and will use the id to find and remove the 
+ * contact by their id from the list of contacts
+ * *** hints: 
+ * *** findIndex: resources/findIndex.jpg
+ * *** splice: resources/splice.jpg
+ * @param {string} contactId 
+ */
+function removeContact(contactId) {
+}
+
 
 /**
  * Used to generate a random string id for mocked

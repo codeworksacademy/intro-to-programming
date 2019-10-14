@@ -26,8 +26,8 @@
   </header>
 
   <main class="container">
-    <!-- TODO Complete the form to include a contact name, phone, and ice checkbox -->
-    <form class="card mt-1 mb-1" id="new-contact-form" class="" onsubmit="">
+    <!-- TODO Complete the form to include a contact name, phone, and emergency contact checkbox -->
+    <form class="card mt-1 mb-1" id="new-contact-form" class="" onsubmit="addContact(event)">
       <div>
         <h4 class="mt-1 mb-1">
           <i class="fa fa-fw fa-user"></i>
@@ -58,7 +58,7 @@
           <i class="action fa fa-trash text-danger"></i>
         </div>
       </div>
-      <div class="card mt-1 mb-1 ice">
+      <div class="card mt-1 mb-1 emergency-contact">
         <h3 class="mt-1 mb-1">Emergency Contact Tester</h3>
         <div class="d-flex space-between">
           <p>
