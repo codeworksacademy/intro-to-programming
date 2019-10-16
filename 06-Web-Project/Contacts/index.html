@@ -18,7 +18,7 @@
       <span>My Contact List</span>
     </h1>
     <!-- TODO show the new-contact-form when this button is clicked -->
-    <button class="fab" onclick="" title="New Contact">
+    <button class="fab" onclick="toggleAddContactForm()" title="New Contact">
       <i class="fa fa-lg fa-plus-circle"></i>
     </button>
     </div>
@@ -26,7 +26,7 @@
   </header>
 
   <main class="container">
-    <!-- TODO Complete the form to include a contact name, phone, and emergency contact checkbox -->
+
     <form class="card mt-1 mb-1" id="new-contact-form" class="" onsubmit="addContact(event)">
       <div>
         <h4 class="mt-1 mb-1">
@@ -38,11 +38,21 @@
         <label for="name">Name:</label>
         <input type="text" name="name">
       </div>
+
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone">
+      </div>
+      <div>
+        <label for="emergency-contact">Emergency Contact:</label>
+        <input type="checkbox" name="emergencyContact">
+      </div>
+
       <hr>
       <div class="d-flex space-between">
         <button type="submit">Submit</button>
         <!-- TODO hide this form when this button is clicked -->
-        <button class="btn-cancel" type="button" onclick="">cancel</button>
+        <button class="btn-cancel" type="button" onclick="toggleAddContactForm()">cancel</button>
       </div>
     </form>
 
