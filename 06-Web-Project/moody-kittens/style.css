@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 :root{
-  --primary: #0084ff;
-  --primary-lighten: #2392fa;
-  --primary-darken: #004d96;
+  --primary: #abce5c;
+  --primary-lighten: #b7f12e;
+  --primary-darken: #6f8639;
   --bg: #e0d9d9;
-  --shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  --shadow: 2px 0 5px rgba(49, 49, 49, 0.5);
   --corners: 0;
   --text-color: #3a3838;
   --dark: #3a3838;
@@ -22,6 +22,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Catamaran', sans-serif;
 }
 
 header{
@@ -29,6 +30,9 @@ header{
 }
 main{
   min-height: calc(100vh - (120px + 80px));
+}
+#welcome{
+  min-height: calc(95vh - (120px + 80px));
 }
 footer{
   height: 120px;
@@ -52,36 +56,62 @@ label{
 }
 
 input{
-  display: block;
   width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
+  color: var(--light);
+  background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border: none;
+  border-bottom: 1px solid var(--primary);
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  margin-bottom: .75em;
+}
+input:focus{
+  outline: none;
 }
 
 button{
   background-color: var(--primary);
   color: var(--light);
-  border: 1px solid var(--primary-darken);
+  border: none;
   border-radius: var(--corners);
   box-shadow: var(--shadow);
   text-transform: uppercase;
   transition: all .2s ease;
   cursor: pointer;
-  padding: 1em;
+  padding: .5em;
 }
-
+button:focus{
+  outline: none;
+}
 button:hover{
   background-color: var(--primary-lighten);
 }
 
+button.btn-special{
+  background: transparent;
+  word-wrap: normal;
+  border: none;
+  width: 100px;
+  box-shadow: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+button.btn-special:after{
+  content: "ADD";
+  margin-top: 5px;
+  font-size: 8pt;
+  color: var(--primary);
+}
+button.btn-special:focus{
+  outline: none;
+}
+button.btn-special:hover{
+  color: var(--primary);
+}
 .container{
   margin: 0 .5em;
 }
@@ -95,6 +125,28 @@ button:hover{
 
 .shadow{
   filter: drop-shadow(var(--shadow));
+}
+
+
+.kitten img{
+  filter: drop-shadow(2px 4px 6px #1b1b1b);
+  transition: all .35s ease;
+}
+.kitten.happy img{
+  filter: drop-shadow(2px 4px 6px #00ffb3);
+}
+.kitten.tolerant img{
+  filter: drop-shadow(2px 4px 6px #646464);
+}
+.kitten.angry img{
+  filter: drop-shadow(2px 4px 6px #ff0000) contrast(1);
+}
+.kitten.gone img{
+  filter: drop-shadow(2px 4px 6px #ff0000) contrast(0);
+}
+.kitten.gone{
+  color: var(--danger);
+  pointer-events: none;
 }
 
 .bg-dark{
@@ -129,6 +181,9 @@ button:hover{
 .d-flex{
   display: flex;
   align-items: center;
+}
+.flex-wrap{
+  flex-wrap: wrap;
 }
 .d-flex.space-between{
   justify-content: space-between;
